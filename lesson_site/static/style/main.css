@@ -17,6 +17,7 @@ body {
     /* рамка: ширина 0.5пикс, сплошная, цвет серый; */
     border-radius: 1em;
     background: #fff;
+    text-align: center;
 }
 
 .row {
