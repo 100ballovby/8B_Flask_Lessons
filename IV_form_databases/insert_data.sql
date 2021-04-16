@@ -5,4 +5,5 @@ INSERT INTO person (
            ('John', 'Bennet', 'M', '2000-05-07', 'Kiseleva 12',
             'Minsk', 'Belarus');
 
+
 SELECT * FROM person;
