@@ -7,3 +7,10 @@ INSERT INTO person (
 
 
 SELECT * FROM person;
+
+INSERT INTO favorite_food (person_id, food)
+VALUES (1, 'cookies'), (3, 'ham'), (1, 'pizza'),
+       (2, 'nachos'), (2, 'grape'), (3, 'kefir'),
+       (1, 'apple'), (3, 'chips'), (2, 'potato');
+
+SELECT * FROM favorite_food;
