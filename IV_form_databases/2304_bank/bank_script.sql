@@ -33,3 +33,12 @@ CREATE TABLE IF NOT EXISTS business (
     incorp_date DATE,
     inp VARCHAR(50)
 );
+-- таблица для officers
+CREATE TABLE IF NOT EXISTS officer (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  cust_id INTEGER,
+  f_name VARCHAR(30),
+  l_name VARCHAR(30),
+  start_date DATE,
+  end_date DATE
+);
