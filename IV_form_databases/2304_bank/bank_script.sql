@@ -51,6 +51,23 @@ CREATE TABLE IF NOT EXISTS officer (
   REFERENCES business (id)
 );
 
+-- таблица банковских услуг
+CREATE TABLE IF NOT EXISTS product (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(50) UNIQUE NOT NULL,
+    product_type VARCHAR(10),
+    date_offered DATE,
+    date_retried DATE,
+    CONSTRAINT fk_ptype FOREIGN KEY (product_type)
+    REFERENCES prod_type (type)
+);
+
+-- таблица типов услуг
+CREATE TABLE IF NOT EXISTS prod_type (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    type VARCHAR(10)
+);
+
 -- удаление таблиц
 DROP TABLE account;
 DROP TABLE business;
