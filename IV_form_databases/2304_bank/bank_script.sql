@@ -46,7 +46,9 @@ CREATE TABLE IF NOT EXISTS officer (
   f_name VARCHAR(30),
   l_name VARCHAR(30),
   start_date DATE,
-  end_date DATE
+  end_date DATE,
+  CONSTRAINT fk_client FOREIGN KEY (cust_id)
+  REFERENCES business (id)
 );
 
 -- удаление таблиц
