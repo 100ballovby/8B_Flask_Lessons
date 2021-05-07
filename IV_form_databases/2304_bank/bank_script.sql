@@ -5,7 +5,9 @@ CREATE TABLE IF NOT EXISTS account (
     close_date DATE,
     product_id INTEGER,
     avail_balance FLOAT(10, 2),
-    pending_balance FLOAT(10, 2)
+    pending_balance FLOAT(10, 2),
+    CONSTRAINT fk_cust FOREIGN KEY (customer_id)
+    REFERENCES customer (id)
 );
 
 CREATE TABLE IF NOT EXISTS customer (
@@ -24,14 +26,18 @@ CREATE TABLE IF NOT EXISTS individual (
     passport_code VARCHAR(15),
     phone VARCHAR(20),
     email VARCHAR(20),
-    birth_date DATE
+    birth_date DATE,
+    CONSTRAINT fk_type FOREIGN KEY (id)
+    REFERENCES customer (cust_type)
 );
 -- таблица для юридических лиц
 CREATE TABLE IF NOT EXISTS business (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name VARCHAR(255) NOT NULL,
     incorp_date DATE,
-    inp VARCHAR(50)
+    inp VARCHAR(50),
+    CONSTRAINT fk_type FOREIGN KEY (id)
+    REFERENCES customer (cust_type)
 );
 -- таблица для officers
 CREATE TABLE IF NOT EXISTS officer (
@@ -42,3 +48,10 @@ CREATE TABLE IF NOT EXISTS officer (
   start_date DATE,
   end_date DATE
 );
+
+-- удаление таблиц
+DROP TABLE account;
+DROP TABLE business;
+DROP TABLE customer;
+DROP TABLE individual;
+DROP TABLE officer;
