@@ -8,7 +8,7 @@ response = requests.get(url)
 cur = json.loads(response.text)
 
 for i in cur['data']:
-    c = Currencies()  # cоздаю экземпляр валюты
+    c = Currencies()  # создаю экземпляр валюты
     c.currency_code = i['id']  # записываю код валюты
     c.currency = i['name']  # записываю название валюты
     db.session.add(c)  # добавляю новую валюту в бд
